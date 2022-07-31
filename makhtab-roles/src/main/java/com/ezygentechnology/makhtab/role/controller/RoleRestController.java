@@ -1,6 +1,8 @@
 package com.ezygentechnology.makhtab.role.controller;
 
 
+import java.util.List;
+
 import javax.security.sasl.AuthenticationException;
 
 import org.slf4j.Logger;
@@ -39,7 +41,21 @@ public class RoleRestController {
 		String SchemaName="makhtab";
 		LOGGER.info("Inside RoleRestController-> upsertRole -> Schema:"+SchemaName);
 		LOGGER.info("@RequestBody"+role);
+		
+		//return role;
 		return service.upsertRole(role, "makhtab");
+
+	}
+	
+	@RequestMapping(value = "/role", method = RequestMethod.GET)
+	public List<MktbRole> getAllRoles()
+			throws AuthenticationException {
+		String SchemaName="makhtab";
+		LOGGER.info("Inside RoleRestController-> getAllRoles -> Schema:"+SchemaName);
+		
+		
+		//return role;
+		return service.getAllRoles(SchemaName);
 
 	}
 }

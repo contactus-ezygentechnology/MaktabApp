@@ -21,6 +21,7 @@ public class mktbRoleRowMapper implements RowMapper<MktbRole> {
 		MktbRole role = new MktbRole();
 		//
 		role.setRoleName(rs.getString("roleName"));
+		role.setRoleId(rs.getLong("roleId"));
 		return role;
 	}
 

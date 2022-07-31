@@ -1,5 +1,6 @@
 package com.ezygentechnology.makhtab.role.dao;
 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 
+import com.ezygentechnology.makhtab.role.dao.mapper.mktbRoleRowMapper;
 import com.ezygentechnology.makhtab.role.pojo.MktbRole;
 import com.ezygentechnology.makhtab.utils.Util;
 
@@ -37,8 +39,7 @@ public class RoleDaoImpl implements IRoleDAO {
 		String sql= env.getProperty("INSERT_ROLE");
 		sql=Util.replaceSchema(sql,schema);//TODO 
 
-		StringBuilder sb = new StringBuilder();
-
+	
 		Map<String, Object> args = new HashMap<String, Object>();
 
 
@@ -60,6 +61,22 @@ public class RoleDaoImpl implements IRoleDAO {
 
 		return role;
 
+	}
+
+
+	@Override
+	public List<MktbRole> getAllRoles(String schemaName) {
+		String sql="";
+		
+			sql= env.getProperty("SELECT_ROLE");
+		
+			sql=Util.replaceSchema(sql,schemaName);//TODO 
+			
+			Map<String, Object> args = new HashMap<String, Object>();
+			
+			List<MktbRole> mktbRoles = jdbcTemplate.query(sql, args, new mktbRoleRowMapper());
+
+		return mktbRoles;
 	}
 
 

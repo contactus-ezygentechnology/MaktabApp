@@ -4,7 +4,7 @@ import java.text.Normalizer;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-import com.ezygentechnology.makhtab.constant.MKHTB_Constans;
+import com.ezygentechnology.makhtab.role.constant.MKHTB_Constans;
 
 public class Util {
 	

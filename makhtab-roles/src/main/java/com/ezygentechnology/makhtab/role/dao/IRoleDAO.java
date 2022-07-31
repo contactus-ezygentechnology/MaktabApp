@@ -17,6 +17,7 @@ public interface IRoleDAO {
 	 * @return
 	 */
 	MktbRole upsertRole(MktbRole role, String schema);
+	List<MktbRole> getAllRoles(String schemaName);
 
 
 	
