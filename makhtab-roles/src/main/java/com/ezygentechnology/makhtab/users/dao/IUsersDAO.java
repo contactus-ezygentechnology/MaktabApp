@@ -1,5 +1,7 @@
 package com.ezygentechnology.makhtab.users.dao;
 
+import java.util.List;
+
 import com.ezygentechnology.makhtab.users.pojo.MktbUsers;
 
 public interface IUsersDAO {
@@ -12,5 +14,7 @@ public interface IUsersDAO {
 	 * @return
 	 */
 	MktbUsers upsertUsers(MktbUsers users,String schema);
+	
+	List<MktbUsers> selectAllUsers(String schema);
 
 }

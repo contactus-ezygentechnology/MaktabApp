@@ -1,5 +1,7 @@
 package com.ezygentechnology.makhtab.users.controller;
 
+import java.util.List;
+
 import javax.security.sasl.AuthenticationException;
 
 import org.slf4j.Logger;
@@ -29,6 +31,13 @@ public class UsersRestController {
 		LOGGER.info("@RequestBody"+users);
 		return userService.upsertUsers(users, SchemaName);
 
+	}
+	
+	@RequestMapping(value="/users", method = RequestMethod.GET)
+	public List<MktbUsers> getAllUsers()
+	{
+		String SchemaName="makhtab";
+		return userService.selectAllUsers(SchemaName);
 	}
 
 }

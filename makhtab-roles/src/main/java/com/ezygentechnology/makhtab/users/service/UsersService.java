@@ -1,5 +1,7 @@
 package com.ezygentechnology.makhtab.users.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,13 @@ public class UsersService implements IUsersService {
 		LOGGER.info("Inside UserService->Schema:"+schema+"->:upsertUser");
 		return userDao.upsertUsers(users, schema);
 		
+	}
+	
+	@Override
+	public List<MktbUsers> selectAllUsers(String schema)
+	{
+		LOGGER.info("Inside UserService->Schema:"+schema+"->:selectAllUsers");
+		return userDao.selectAllUsers(schema);
 	}
 
 }

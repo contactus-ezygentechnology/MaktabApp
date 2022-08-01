@@ -10,7 +10,7 @@ public class MktbUsers implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private long roleId;
-	private String refId;
+	private String user_id;
 	private String userName;
 	private String password;
 	
@@ -20,11 +20,11 @@ public class MktbUsers implements Serializable {
 	public void setRoleId(long roleId) {
 		this.roleId = roleId;
 	}
-	public String getRefId() {
-		return refId;
+	public String getUserId() {
+		return user_id;
 	}
-	public void setRefId(String refId) {
-		this.refId = refId;
+	public void setUserId(String refId) {
+		this.user_id = refId;
 	}
 	public String getUserName() {
 		return userName;
