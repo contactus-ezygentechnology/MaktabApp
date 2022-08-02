@@ -26,8 +26,8 @@ public class MktbTeachers {
 	public Timestamp getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Timestamp dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = Timestamp.valueOf(dateOfBirth);
 	}
 	public String getIdProof() {
 		return idProof;
@@ -38,8 +38,8 @@ public class MktbTeachers {
 	public Timestamp getRegistrationDate() {
 		return registrationDate;
 	}
-	public void setRegistrationDate(Timestamp registrationDate) {
-		this.registrationDate = registrationDate;
+	public void setRegistrationDate(String registrationDate) {
+		this.registrationDate = Timestamp.valueOf(registrationDate);
 	}
 	public int getIsActive() {
 		return isActive;

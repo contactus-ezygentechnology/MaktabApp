@@ -15,6 +15,8 @@ public interface IUsersDAO {
 	 */
 	MktbUsers upsertUsers(MktbUsers users,String schema);
 	
-	List<MktbUsers> selectAllUsers(String schema);
+	List<MktbUsers> getAllUsers(String schema);
+	
+	MktbUsers getUser(Long user_id,String schema);
 
 }

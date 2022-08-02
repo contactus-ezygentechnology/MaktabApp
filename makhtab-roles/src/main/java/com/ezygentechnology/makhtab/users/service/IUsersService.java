@@ -8,6 +8,8 @@ public interface IUsersService {
 	
 	MktbUsers upsertUsers(MktbUsers users,String schema);
 	
-	List<MktbUsers> selectAllUsers(String Schema);
+	List<MktbUsers> getAllUsers(String Schema);
+	
+	MktbUsers getUser(Long user_id, String schema);
 
 }

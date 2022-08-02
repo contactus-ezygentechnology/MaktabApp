@@ -26,10 +26,16 @@ public class UsersService implements IUsersService {
 	}
 	
 	@Override
-	public List<MktbUsers> selectAllUsers(String schema)
+	public List<MktbUsers> getAllUsers(String schema)
 	{
-		LOGGER.info("Inside UserService->Schema:"+schema+"->:selectAllUsers");
-		return userDao.selectAllUsers(schema);
+		LOGGER.info("Inside UserService->Schema:"+schema+"->:getAllUsers");
+		return userDao.getAllUsers(schema);
+	}
+
+	@Override
+	public MktbUsers getUser(Long user_id, String schema) {
+		LOGGER.info("Inside UserService->Schema:"+schema+"->:getUser");
+		return userDao.getUser(user_id, schema);
 	}
 
 }
