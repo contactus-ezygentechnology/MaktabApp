@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.ezygentechnology.makhtab.role.dao.mapper.mktbRoleRowMapper;
 import com.ezygentechnology.makhtab.users.dao.mapper.mktbUsersRowMapper;
 import com.ezygentechnology.makhtab.users.pojo.MktbUsers;
 import com.ezygentechnology.makhtab.utils.Util;
@@ -34,7 +35,7 @@ public class UsersDaoImpl implements IUsersDAO {
 
 		Map<String, Object> args = new HashMap<String, Object>();
 
-		args.put("user_id", users.getUserId());
+		args.put("user_id", users.getUserId()>0?users.getUserId():null);
 		args.put("roleId", users.getRoleId());
 		args.put("username", users.getUserName());
 		args.put("password", users.getPassword());
@@ -62,7 +63,7 @@ public class UsersDaoImpl implements IUsersDAO {
 		Map<String, Object> args = new HashMap<String, Object>();
 		
 		
-			List<MktbUsers> users = (List<MktbUsers>) jdbcTemplate.query(sql, (ResultSetExtractor<MktbUsers>) new mktbUsersRowMapper());
+			List<MktbUsers> users = jdbcTemplate.query(sql, args, new mktbUsersRowMapper());
 			// logger
 			LOGGER.info("Schema:" + schema);
 

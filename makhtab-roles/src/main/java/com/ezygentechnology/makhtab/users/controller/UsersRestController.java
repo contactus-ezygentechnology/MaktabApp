@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ezygentechnology.makhtab.users.pojo.MktbUsers;
 import com.ezygentechnology.makhtab.users.service.IUsersService;
 
-@RestController("/")
+@RestController
 public class UsersRestController {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(UsersRestController.class);

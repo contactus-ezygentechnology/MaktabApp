@@ -17,7 +17,7 @@ public class mktbUsersRowMapper {
 			
 			MktbUsers users = new MktbUsers();
 			//
-			users.setUserId(rs.getString("user_id"));
+			users.setUserId(rs.getLong("user_id"));
 			users.setRoleId(rs.getLong("roleId"));
 			users.setUserName(rs.getString("userName"));
 			users.setPassword(rs.getString("password"));
