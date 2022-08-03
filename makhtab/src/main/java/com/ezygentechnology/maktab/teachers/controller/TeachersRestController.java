@@ -27,7 +27,7 @@ public class TeachersRestController {
 	@RequestMapping(value = "/teachers", method = RequestMethod.PUT)
 	public MktbTeachers upsertTeacher(@RequestBody MktbTeachers teachers) throws AuthenticationException {
 		String SchemaName = "makhtab";
-		LOGGER.info("Inside UsersRestController-> upsertUsers -> Schema:" + SchemaName);
+		LOGGER.info("Inside TeachersRestController-> upsertTeacher -> Schema:" + SchemaName);
 		LOGGER.info("@RequestBody" + teachers);
 		return teacherService.upsertTeachers(teachers, SchemaName);
 
