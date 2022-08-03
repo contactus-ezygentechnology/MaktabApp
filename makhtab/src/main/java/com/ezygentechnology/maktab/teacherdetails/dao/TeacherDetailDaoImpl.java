@@ -33,7 +33,7 @@ public class TeacherDetailDaoImpl implements ITeacherDetailsDAO {
 
 		Map<String, Object> args = new HashMap<String, Object>();
 
-		args.put("teacherId", teacherDetails.getTeacherId() > 0 ? teacherDetails.getTeacherId() : null);
+		args.put("teacherId", teacherDetails.getTeacherId());
 		args.put("pinCode", teacherDetails.getPinCode());
 		args.put("address", teacherDetails.getCity());
 		args.put("city", teacherDetails.getCity());
