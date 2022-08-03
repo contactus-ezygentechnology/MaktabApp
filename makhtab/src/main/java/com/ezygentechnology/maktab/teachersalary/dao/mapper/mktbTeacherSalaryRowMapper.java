@@ -16,7 +16,7 @@ public class mktbTeacherSalaryRowMapper implements RowMapper<MktbTeacherSalary> 
 
 		teacherSalary.setTeacherId(rs.getInt("teacherId"));
 		teacherSalary.setCompensation(rs.getString("compensation"));
-		teacherSalary.setDate(rs.getTimestamp("date"));
+		teacherSalary.setDate(String.valueOf(rs.getTimestamp("date")));
 		teacherSalary.setIncrement(rs.getString("increment"));
 
 		return teacherSalary;
