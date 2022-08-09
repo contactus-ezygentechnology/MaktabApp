@@ -1,4 +1,16 @@
     
+		
+	        create schema global_maktabs;
+		use global_maktabs;
+	        CREATE TABLE global_maktab_users (userId bigint NOT NULL AUTO_INCREMENT,fName varchar(100),LName varchar(100)
+		,country varchar(10),state varchar(10),city varchar(10),address varchar(300),pinCode varchar(50), 
+		email varchar(200), phoneNumber varchar(20),currency varchar(10),
+		registrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP, isActive tinyint DEFAULT 1,
+		PRIMARY KEY (userId)) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+		
+		############################################################################################################################################
+		
+		
 		CREATE TABLE mktb_roles ( roleId bigint NOT NULL AUTO_INCREMENT,roleName varchar(100) NOT NULL, PRIMARY KEY (roleId) ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 		CREATE TABLE mktb_users (  type varchar(100),userName varchar(100) NOT NULL, password varchar(100) NOT NULL,PRIMARY KEY (userName) ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 		CREATE TABLE mktb_teachers( userName varchar(100) NOT NULL,teacherId bigint NOT NULL AUTO_INCREMENT,teacherName varchar(100),DOB TIMESTAMP DEFAULT CURRENT_TIMESTAMP,idProof varchar(100),registrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP, isActive tinyint DEFAULT 1,language varchar(100), PRIMARY KEY (teacherId) ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
